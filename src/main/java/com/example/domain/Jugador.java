@@ -3,36 +3,42 @@ package com.example.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.time.LocalDate;
 
 /**
  * Created by 48092788H on 13/10/2016.
  */
 @Entity
 public class Jugador {
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String nombre;
-    private String fecha_nacimiento;
+    private LocalDate fechaNacimiento;
     private int canastas;
     private int asistencias;
     private int rebotes;
     private String posicion;
 
+    public Jugador() {
+    }
 
-    public Jugador(String nombre, String fecha_nacimiento, int canastas, int asistencias, int rebotes, String posicion) {
+    public Jugador(String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
+
         this.nombre = nombre;
-        this.fecha_nacimiento = fecha_nacimiento;
+        this.fechaNacimiento = fechaNacimiento;
         this.canastas = canastas;
         this.asistencias = asistencias;
         this.rebotes = rebotes;
         this.posicion = posicion;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,12 +50,12 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public int getCanastas() {
@@ -89,7 +95,7 @@ public class Jugador {
         return "Jugador{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", fecha_nacimiento='" + fecha_nacimiento + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
                 ", canastas=" + canastas +
                 ", asistencias=" + asistencias +
                 ", rebotes=" + rebotes +

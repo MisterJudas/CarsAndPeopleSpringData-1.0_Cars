@@ -1,19 +1,31 @@
 package com.example.repository;
 
 import com.example.domain.Car;
+import com.example.domain.Jugador;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
-public interface JugadorRepository extends JpaRepository<Car, Long> {
+public interface JugadorRepository extends JpaRepository<Jugador, Long> {
 
     //Spring Data Queries
 
-    List<Car> findByYearOfFabGreaterThanEqual(Integer yearOfFab);
+    List<Jugador> findByNombre(String nombre);
 
+    List<Jugador> findByCanastasGreaterThanEqual(int canastas);
+
+    List<Jugador> findByAsistenciasBetween(int min, int max);
+
+
+
+
+
+
+/*
     List<Car> findByYearOfFabLessThan(Integer yearOfFab);
 
     List<Car> findByYearOfFabBetween(Integer min, Integer max);
@@ -32,39 +44,7 @@ public interface JugadorRepository extends JpaRepository<Car, Long> {
 
     List<Car> findByBrand(String brand);
 
-    List<Car> findByYearOfFab(Integer yearOfFab);
-
-
-    //JPQL Queries
-
-    @Query("SELECT AVG(car.price) from Car car WHERE car.brand = :brand ")
-    Double findAveragePerBrand(@Param("brand") String brand);
-
-    @Query("SELECT car FROM Car car WHERE car.plateNumber LIKE CONCAT('%',:plateNumberPart,'%')")
-    List<Car> findCarByPlateNumberSubstring(@Param("plateNumberPart") String plateNumberPart);
-
-    //Forma2. Con Spring Data Query
-
-    List<Car> findByPlateNumberContains(String plateNumberPart);
-
-    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
-            "FROM Car car " +
-            "GROUP BY car.brand")
-    List<Object[]> AvgAndMaxAndMinPricesPerBrand();
-
-    //Si no especificamos es asc por defecto
-    @Query("SELECT car.brand, AVG(car.price), MIN(car.price), MAX(car.price) " +
-            "FROM Car car " +
-            "GROUP BY car.brand " +
-            "ORDER BY AVG(car.price) DESC ")
-    List<Object[]> AvgAndMaxAndMinPricesPerBrandOrderedByAVGPrice();
-
-
-    @Query("SELECT car.yearOfFab, COUNT(car) " +
-            "FROM Car car " +
-            "GROUP BY car.yearOfFab")
-    List<Object[]> CarsMadeByYear();
+    List<Car> findByYearOfFab(Integer yearOfFab);*/
 
 }
-
 
