@@ -21,8 +21,7 @@ public class Jugador {
     private int rebotes;
     private String posicion;
 
-    public Jugador() {
-    }
+    public Jugador() {}
 
     public Jugador(String nombre, LocalDate fechaNacimiento, int canastas, int asistencias, int rebotes, String posicion) {
 

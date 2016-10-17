@@ -34,31 +34,5 @@ public interface JugadorRepository extends JpaRepository<Jugador, Long> {
             "GROUP BY jugador.posicion")
     List<Object[]> AvgCanastasAsistenciasRebotesMinMaxPorPosicion();
 
-
-
-
-
-
-/*
-    List<Car> findByYearOfFabLessThan(Integer yearOfFab);
-
-    List<Car> findByYearOfFabBetween(Integer min, Integer max);
-
-    List<Car> findByPriceGreaterThanEqual(Double price);
-
-    List<Car> findByPriceBetween(Double min, Double max);
-
-    Car findByPlateNumber(String plateNumber);
-
-    List<Car> findByBrandAndModel(String brand, String model);
-
-    List<Car> findByBrandAndPrice(String brand, Double price);
-
-    List<Car> findByBrandAndModelAndPriceGreaterThanEqual(String brand, String model, Double price);
-
-    List<Car> findByBrand(String brand);
-
-    List<Car> findByYearOfFab(Integer yearOfFab);*/
-
 }
 
