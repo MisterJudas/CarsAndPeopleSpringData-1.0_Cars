@@ -20,21 +20,17 @@ public class CarService {
         Car car1= new Car(1L,"Jaguar","TheRoadIsYours",2016,"1234ENG", 61405.00);
         carRepository.save(car1);
 
-
         Car car2= new Car (2L,"BMW","LoveAtFirstDrive",2014,"9065AME", 75399.00);
         carRepository.save(car2);
 
         Car car3= new Car (3L,"Lexus","LC500",2016,"5638DDD",85500.00);
         carRepository.save(car3);
 
-
         Car car4= new Car (4L,"Aston Martin","DB10",2015,"3564GER", 3156825.00);
         carRepository.save(car4);
 
-
         Car car5= new Car (5L,"RomeoAlfaJulietta","DramaMasterpiece",2013,"4749JAV",66200.00);
         carRepository.save(car5);
-
 
         Car car6= new Car (6L,"BMW","LoveAtFirstDrive",2014,"9065AND", 75399.00);
         carRepository.save(car6);
@@ -42,10 +38,8 @@ public class CarService {
         Car car7= new Car(7L,"Jaguar","FPACE",2015,"1235ENG",45000.00 );
         carRepository.save(car7);
 
-
         Car car8= new Car (8L,"BMW","CABRIO",2014,"9065AME", 47550.00);
         carRepository.save(car8);
-
 
         Car car9= new Car(9L,"Jaguar","FPACE",2015,"5321ENG",45000.00 );
         carRepository.save(car9);
@@ -79,19 +73,6 @@ public class CarService {
         System.out.println("Cars of brand Aston Martin, model of James Bond of the movie Spectrum,DB10, that costs more than 3100000 Euros ");
         System.out.println(carRepository.findByBrandAndModelAndPriceGreaterThanEqual("Aston Martin","DB10",3100000.00));
 
-        /* código que calcula la media
-        List<Car> carList = carRepository.findByBrand("BMW");
-
-        int sum=0;
-        int numCars=0;
-        for(Car car : carList)
-        {
-            numCars++;
-            sum=sum+car.getPrice();
-        }
-
-        int average= sum/numCars;
-        */
 
         System.out.println("List of Jaguar brand cars");
         System.out.println(carRepository.findByBrand("Jaguar"));

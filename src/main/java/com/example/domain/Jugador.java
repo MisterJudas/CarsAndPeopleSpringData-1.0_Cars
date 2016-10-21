@@ -1,9 +1,6 @@
 package com.example.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -20,6 +17,9 @@ public class Jugador {
     private int asistencias;
     private int rebotes;
     private String posicion;
+
+    @ManyToOne
+    private Equipo equipo;
 
     public Jugador() {}
 
@@ -87,6 +87,14 @@ public class Jugador {
 
     public void setPosicion(String posicion) {
         this.posicion = posicion;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
     @Override
